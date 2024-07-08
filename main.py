@@ -11,10 +11,19 @@ def makeReverse(numbers):
     Create a new list of numbers in rev order without using rev function.
     """
     new_numbers = []
-    for n in numbers:
-        new_numbers.insert(0, n)
+    
+    # using .insert() method
+    # for n in numbers:
+    #     new_numbers.insert(0, n)
+    # return new_numbers
+    
+    # using .pop() method, is more efficient than .insert().
+    # pop() removes the last element of the list.
+    temp_numbers = numbers[:]
+    while temp_numbers:
+        x = temp_numbers.pop()
+        new_numbers.append(x)
     return new_numbers
-
 
 def main():
     numbers = getInput()
